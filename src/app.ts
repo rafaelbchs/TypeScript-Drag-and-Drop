@@ -1,15 +1,10 @@
-// Drag and Drop Interfaces
-interface Draggable {
-    dragStartHandler(event: DragEvent): void;
+/// <reference path ="drag-drop-interfaces.ts" />
+/// <reference path ="project-model.ts" />
 
-    dragEndHandler(event: DragEvent): void;
-}
+namespace App {
 
-interface DragTarget {
-    dragOverhandler(event: DragEvent):void ;
-    dropHandler(event: DragEvent): void;
-    dragLeaveHandler(event: DragEvent): void;
-}
+
+
 // autobind decorator
 
 function Autobind(_: any, __: string, descriptor: PropertyDescriptor){
@@ -24,14 +19,6 @@ function Autobind(_: any, __: string, descriptor: PropertyDescriptor){
     return adjDescriptor;
 }
 
-//Project Type
-enum ProjectStatus { Active, Finished}
-
-class Project {
-    constructor(public id: string, public title: string, public description: string, public people: number, public status: ProjectStatus ){
-
-    }
-}
 
 //Project State Management
 type Listener<T> = (items: T[]) => void;
@@ -321,6 +308,7 @@ class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
 
 }
 
-const projectInput = new ProjectInput();
-const activeProjectList = new ProjectList('active')
-const finishedProjectList = new ProjectList('finished')
+new ProjectInput();
+new ProjectList('active')
+new ProjectList('finished')
+}
