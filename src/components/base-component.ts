@@ -1,5 +1,5 @@
 
-namespace App {
+
     // Component Base Class
 export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
     templateElement: HTMLTemplateElement;
@@ -25,5 +25,4 @@ export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
     // this forces the new class to create these methods
     abstract configure():void;
     abstract renderContent():void;
-}
 }
